@@ -1,0 +1,1431 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* variable color code */
+
+:root {
+    --primaryText-color: #121843;
+    --black-color: #111;
+    --gray-color: #666;
+    --lightGray-color: #ddd;
+    --white-color: #fff;
+    --bg-color: #fafafa;
+    --card1-bg-color: #e9d2c7;
+    --card2-bg-color: #c0dae6;
+    --card3-bg-color: #ecd9ec;
+}
+
+/* Global style */
+
+.container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* header style here */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 80px;
+    background-color: var(--white-color);
+    padding: 0 20px;
+    border-bottom: 1px solid #dadada;
+    z-index: 1000;
+    transition: all 0.5s ease;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+header nav .hamburgerMenu {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+header nav .tabMenu {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+header nav .hamburgerMenu i {
+    color: var(--primaryText-color);
+}
+
+header nav .searchBox {
+    position: relative;
+    width: 300px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+header nav .searchBox input {
+    width: 100%;
+    height: 40px;
+    padding: 0 40px 0 20px;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--primaryText-color);
+}
+
+header nav .searchBox input::placeholder {
+    color: var(--gray-color);
+}
+
+header nav .searchBox i {
+    position: absolute;
+    right: 25px;
+    font-size: 20px;
+    color: var(--primaryText-color);
+    cursor: pointer;
+}
+
+header nav .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav .nav-links a {
+    color: var(--primaryText-color);
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+header nav .nav-links a:hover {
+    color: #ff0000;
+}
+
+header nav .nav-links .profileContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--lightGray-color);
+    border-radius: 20px 20px 20px 20px;
+}
+
+/* hover on profile container to make border */
+
+header nav .nav-links .profileContainer:hover {
+    background-color: #f4f4f4;
+}
+
+header nav .nav-links .profileContainer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header nav .nav-links .profileContainer span {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+header nav .nav-links .profileContainer i {
+    font-size: 20px;
+    color: var(--primaryText-color);
+}
+
+/* header ends here */
+
+/* Left sidebar style */
+
+.leftSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    border-right: 1px solid #dadada;
+    transition: all 0.5s ease;
+}
+
+.leftSidebar .logo {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.leftSidebar .logo #logo1 {
+    width: 100%;
+}
+
+.leftSidebar .logo #logo2 {
+    display: none;
+    width: 50px;
+}
+
+#hide {
+    display: none;
+}
+
+.leftSidebar .leftSidebarIcons {
+    display: none;
+}
+
+.leftSidebar .leftSidebarLinks {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu small {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gray-color);
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--gray-color);
+    transition: all 0.3s ease;
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu a.active {
+    color: #ff0000;
+    background-color: var(--lightGray-color);
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu a:hover {
+    color: #ff0000;
+    background-color: var(--lightGray-color);
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu a i {
+    font-size: 20px;
+}
+
+.leftSidebar .leftSidebarLinks .mainMenu a span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* left sidebar ends here */
+
+/* main section style here */
+
+main {
+    position: relative;
+    top: 80px;
+    left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    transition: all 0.5s ease;
+}
+
+/* mainContainer styles starts here */
+
+main .mainContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main .mainContainer .mainTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+main .mainContainer .mainCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+main .mainContainer .mainCards .card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+main .mainContainer .mainCards .card:hover {
+    transform: translateY(-10px);
+}
+
+main .mainContainer .mainCards .card:nth-child(1) {
+    background-color: var(--card1-bg-color);
+}
+
+main .mainContainer .mainCards .card:nth-child(2) {
+    background-color: var(--card2-bg-color);
+}
+
+main .mainContainer .mainCards .card:nth-child(3) {
+    background-color: var(--card3-bg-color);
+}
+
+main .mainContainer .mainCards .card .cardText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .mainContainer .mainCards .card .cardText h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+main .mainContainer .mainCards .card .cardText h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+main .mainContainer .mainCards .card .cardText p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* color of nth p tag */
+
+main .mainContainer .mainCards .card:nth-child(1) p {
+    color: #ff0000;
+}
+
+main .mainContainer .mainCards .card:nth-child(2) p {
+    color: #007bff;
+}
+
+main .mainContainer .mainCards .card:nth-child(3) p {
+    color: #ff00ff;
+}
+
+/* mainCard section ends here */
+
+/* Employees data cards starts here */
+
+main .mainContainer .employeesDataCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h1 {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText .employeeCount {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText .employeeCount p {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesData {
+    display: flex;
+    flex-direction: column;
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesData .employeesDataCardImg img {
+    width: 150px;
+    filter: drop-shadow(5px 5px 10px rgba(250, 0, 0, 0.5));
+}
+
+main .mainContainer .employeesDataCards .employeesDataCard .employeesData p {
+    font-size: 15px;
+    padding: 5px 10px;
+    background-color: #e9d2c7;
+    border-radius: 5px;
+}
+
+/* Announcement section starts here */
+
+.announcement {
+    width: 100%;
+    height: 450px;
+    padding: 20px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
+}
+
+.rightBottom .announcement {
+    height: 500px;
+}
+
+.announcement .announcementHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.announcement .announcementHeader .time {
+    padding: 5px 10px;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--primaryText-color);
+}
+
+.announcement .announcementHeader h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+.rightBottom .announcement .announcementHeader h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+.announcement .announcementHeader .time {
+    padding: 5px 10px;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--primaryText-color);
+}
+
+.announcement .announcementLists {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.announcement .announcementLists .para {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+.announcement .announcementLists .announcementList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.announcement .announcementLists .announcementList .announcementLeftText h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primaryText-color);
+}
+
+.announcement .announcementLists .announcementList .announcementLeftText p {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+.announcement .announcementLists .announcementList .announcementRightText a {
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--gray-color);
+    transition: all 0.3s ease;
+}
+
+.announcement .announcementLists .announcementList .announcementRightText a:hover {
+    background-color: var(--lightGray-color);
+}
+
+.announcement .announcementLists .announcementList .announcementRightText a i.bxs-pin {
+    transform: rotate(45deg);
+}
+
+.announcement .seeAll {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #d1d1d1;
+}
+
+.announcement .seeAll a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff0000;
+    transition: all 0.3s ease;
+}
+
+.announcement .seeAll a:hover {
+    text-decoration: underline;
+}
+
+/* main section ends here */
+
+/* right sidebar starts here */
+
+.rightSidebar {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 38%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color);
+    transition: all 0.5s ease;
+}
+
+.rightSidebar .rightTop {
+    width: 100%;
+    height: 240px;
+    background-color: var(--primaryText-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rightSidebar .rightTop h4 {
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #1b204a;
+    color: var(--white-color);
+}
+
+.rightSidebar .rightTop .activityLists li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.rightSidebar .rightTop .activityLists li p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #bcbcbc;
+}
+
+.rightSidebar .rightTop .activityLists li h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white-color);
+}
+
+.rightSidebar .rightTop .activityLists li h5 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #bcbcbc;
+}
+
+.rightSidebar .rightTop .activity {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rightSidebar .rightTop .activity p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #bcbcbc;
+}
+
+.rightSidebar .rightTop .activity button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff5151;
+    color: var(--white-color);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rightSidebar .rightTop .activity button:hover {
+    background-color: #ff0000;
+}
+
+/* right sidebar ends here */
+
+/*TODO media queries starts here for Desktop, Tab, and Mobile devices */
+
+/* for mobile devices */
+
+@media only screen and (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+
+    header {
+        left: 0;
+        width: 100%;
+    }
+
+    header nav .hamburgerMenu {
+        display: block;
+    }
+
+    header nav .hamburgerMenu i {
+        font-size: 30px;
+        margin-right: 5px;
+    }
+
+    header nav .searchBox {
+        display: none;
+    }
+
+    header nav .nav-links .profileContainer span {
+        display: none;
+    }
+
+    /* left sidebar query */
+
+    .leftSidebar {
+        width: 50%;
+        left: -100%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .leftSidebar.show {
+        left: 0;
+    }
+
+
+    .leftSidebar .logo #logo1 {
+        display: none;
+    }
+
+    .leftSidebar .logo #logo2 {
+        display: block;
+    }
+
+    #hide {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* media query for mainContainer */
+
+    main {
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main .mainContainer {
+        width: 100%;
+    }
+
+    main .mainContainer .mainCards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    main .mainContainer .mainCards .card {
+        padding: 20px;
+    }
+
+    main .mainContainer .mainCards .card .cardText h5 {
+        font-size: 16px;
+    }
+
+    main .mainContainer .mainCards .card .cardText h1 {
+        font-size: 20px;
+    }
+
+    main .mainContainer .mainCards .card .cardText p {
+        font-size: 12px;
+    }
+
+    main .mainContainer .employeesDataCards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard {
+        padding: 20px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h4 {
+        font-size: 16px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h1 {
+        font-size: 30px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText .employeeCount p {
+        font-size: 8px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesData p {
+        font-size: 12px;
+    }
+
+    .rightSidebar {
+        width: 100%;
+        position: relative;
+    }
+
+    .rightSidebar .rightTop {
+        height: 250px;
+    }
+
+    .rightSidebar .rightTop h4 {
+        font-size: 16px;
+    }
+
+    .rightSidebar .rightTop .activityLists li p {
+        font-size: 8px;
+    }
+
+    .rightSidebar .rightTop .activityLists li h3 {
+        font-size: 14px;
+    }
+
+    .rightSidebar .rightTop .activityLists li h5 {
+        font-size: 10px;
+    }
+
+    .rightSidebar .rightTop .activity p {
+        font-size: 12px;
+    }
+
+    .rightSidebar .rightTop .activity button {
+        font-size: 18px;
+    }
+
+    .rightBottom {
+        width: 100%;
+    }
+
+    .rightBottom .announcement {
+        height: 400px;
+    }
+
+    .rightBottom .announcement .announcementHeader h3 {
+        font-size: 14px;
+    }
+
+    .rightBottom .announcement .announcementLists .para {
+        font-size: 10px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList {
+        padding: 10px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementLeftText h4 {
+        font-size: 12px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementLeftText p {
+        font-size: 10px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementRightText a {
+        font-size: 18px;
+    }
+
+    .rightBottom .announcement .seeAll a {
+        font-size: 14px;
+    }
+
+    .rightBottom .announcement .seeAll a:hover {
+        text-decoration: none;
+    }
+}
+
+/* media query for Tab devices */
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    /* header section queries for tab device*/
+
+    header {
+        left: 120px;
+        width: calc(100% - 120px);
+    }
+
+    header nav .tabMenu {
+        display: block;
+    }
+
+    header nav .nav-links .profileContainer span {
+        display: none;
+    }
+
+    header nav .searchBox {
+        margin-right: 150px;
+    }
+
+
+
+    /* left sidebar query */
+
+    .leftSidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 120px;
+        left: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .leftSidebar.show {
+        left: 0;
+    }
+
+    .leftSidebar .logo {
+        width: 50px;
+    }
+
+    .leftSidebar .logo #logo1 {
+        display: none;
+    }
+
+    .leftSidebar .logo #logo2 {
+        display: block;
+    }
+
+    .leftSidebar .leftSidebarLinks {
+        display: none;
+    }
+
+    .leftSidebar .leftSidebarIcons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .leftSidebar .leftSidebarIcons .mainMenuIcon {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .leftSidebar .leftSidebarIcons .mainMenuIcon small {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--gray-color);
+    }
+
+    .leftSidebar .leftSidebarIcons .mainMenuIcon a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 5px;
+        color: var(--gray-color);
+        transition: all 0.3s ease;
+    }
+
+    .leftSidebar .leftSidebarIcons .mainMenuIcon a:hover {
+        color: #ff0000;
+        background-color: var(--lightGray-color);
+    }
+
+    .leftSidebar .leftSidebarIcons .mainMenuIcon a i {
+        font-size: 20px;
+    }
+
+    .leftSidebar .leftSidebarIcons .otherMenuIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .leftSidebar .leftSidebarIcons .otherMenuIcon small {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--gray-color);
+    }
+
+    .leftSidebar .leftSidebarIcons .otherMenuIcon a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 5px;
+        color: var(--gray-color);
+        transition: all 0.3s ease;
+    }
+
+    .leftSidebar .leftSidebarIcons .otherMenuIcon a:hover {
+        color: #ff0000;
+        background-color: var(--lightGray-color);
+    }
+
+    .leftSidebar .leftSidebarIcons .otherMenuIcon a i {
+        font-size: 20px;
+    }
+
+    /* media query for mainContainer */
+
+    main {
+        top: 60px;
+        left: 120px;
+        width: calc(100% - 120px);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main .mainContainer {
+        width: 100%;
+    }
+
+    main .mainContainer .mainCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main .mainContainer .mainCards .card {
+        padding: 20px;
+    }
+
+    main .mainContainer .mainCards .card .cardText h5 {
+        font-size: 18px;
+    }
+
+    main .mainContainer .mainCards .card .cardText h1 {
+        font-size: 24px;
+    }
+
+    main .mainContainer .mainCards .card .cardText p {
+        font-size: 14px;
+    }
+
+    main .mainContainer .employeesDataCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard {
+        padding: 20px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h4 {
+        font-size: 18px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h1 {
+        font-size: 35px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText .employeeCount p {
+        font-size: 10px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesData p {
+        font-size: 15px;
+    }
+
+    main .rightSidebar {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .rightSidebar .rightTop {
+        height: 300px;
+        width: 40%;
+    }
+
+    .rightSidebar .rightTop h4 {
+        font-size: 18px;
+    }
+
+    .rightSidebar .rightTop .activityLists li p {
+        font-size: 8px;
+    }
+
+    .rightSidebar .rightTop .activityLists li h3 {
+        font-size: 14px;
+    }
+
+    .rightSidebar .rightTop .activityLists li h5 {
+        font-size: 10px;
+    }
+
+    .rightSidebar .rightTop .activity {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .rightSidebar .rightTop .activity p {
+        font-size: 12px;
+    }
+
+    .rightSidebar .rightTop .activity button {
+        font-size: 18px;
+    }
+
+    .rightBottom {
+        width: 60%;
+    }
+
+    .rightBottom .announcement {
+        height: 400px;
+    }
+
+    .rightBottom .announcement .announcementHeader h3 {
+        font-size: 14px;
+    }
+
+    .rightBottom .announcement .announcementLists .para {
+        font-size: 10px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList {
+        padding: 10px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementLeftText h4 {
+        font-size: 12px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementLeftText p {
+        font-size: 10px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementRightText a {
+        font-size: 18px;
+    }
+
+    .rightBottom .announcement .seeAll a {
+        font-size: 14px;
+    }
+
+    .rightBottom .announcement .seeAll a:hover {
+        text-decoration: none;
+    }
+}
+
+/* media query for Desktop devices */
+
+@media only screen and (min-width: 769px) {
+    .container {
+        width: 100%;
+    }
+
+    /* header section queries for tab device*/
+
+    header {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    header nav .tabMenu {
+        display: none;
+    }
+
+    header nav .searchBox {
+        display: flex;
+    }
+
+    header nav .searchBox input {
+        width: 100%;
+        height: 40px;
+        padding: 0 40px 0 20px;
+        border: 1px solid var(--gray-color);
+        border-radius: 5px;
+        background-color: transparent;
+        color: var(--primaryText-color);
+    }
+
+    header nav .searchBox input::placeholder {
+        color: var(--gray-color);
+    }
+
+    header nav .searchBox i {
+        position: absolute;
+        right: 25px;
+        font-size: 20px;
+        color: var(--primaryText-color);
+        cursor: pointer;
+    }
+
+    header nav .nav-links .profileContainer span {
+        display: flex;
+    }
+
+    /* left sidebar query */
+
+    .leftSidebar {
+        width: 250px;
+        left: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .leftSidebar .logo {
+        width: 150px;
+    }
+
+    .leftSidebar .logo #logo1 {
+        display: block;
+    }
+
+    .leftSidebar .logo #logo2 {
+        display: none;
+    }
+
+    .leftSidebar .leftSidebarLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu small {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--gray-color);
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: var(--gray-color);
+        transition: all 0.3s ease;
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu a.active {
+        color: #ff0000;
+        background-color: var(--lightGray-color);
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu a:hover {
+        color: #ff0000;
+        background-color: var(--lightGray-color);
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu a i {
+        font-size: 20px;
+    }
+
+    .leftSidebar .leftSidebarLinks .mainMenu a span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .leftSidebar .leftSidebarIcons {
+        display: none;
+    }
+
+    /* media query for mainContainer */
+
+    main {
+        top: 80px;
+        left: 250px;
+        width: calc(100% - 250px);
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    main .mainContainer {
+        width: 64%;
+    }
+
+    main .mainContainer .mainCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main .mainContainer .mainCards .card {
+        padding: 20px;
+    }
+
+    main .mainContainer .mainCards .card .cardText h5 {
+        font-size: 18px;
+    }
+
+    main .mainContainer .mainCards .card .cardText h1 {
+        font-size: 24px;
+    }
+
+    main .mainContainer .mainCards .card .cardText p {
+        font-size: 14px;
+    }
+
+    main .mainContainer .employeesDataCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard {
+        padding: 20px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h4 {
+        font-size: 18px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText h1 {
+        font-size: 35px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesDataCardText .employeeCount p {
+        font-size: 10px;
+    }
+
+    main .mainContainer .employeesDataCards .employeesDataCard .employeesData p {
+        font-size: 15px;
+    }
+
+    .rightSidebar {
+        width: 35%;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .rightSidebar .rightTop {
+        width: 100%;
+        height: 240px;
+    }
+
+    .rightSidebar .rightTop h4 {
+        width: 100%;
+        height: 50px;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: #1b204a;
+        color: var(--white-color);
+    }
+
+    .rightSidebar .rightTop .activityLists li {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .rightSidebar .rightTop .activityLists li p {
+        font-size: 10px;
+        font-weight: 500;
+        color: #bcbcbc;
+    }
+
+    .rightSidebar .rightTop .activityLists li h3 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--white-color);
+    }
+
+    .rightSidebar .rightTop .activityLists li h5 {
+        font-size: 12px;
+        font-weight: 500;
+        color: #bcbcbc;
+    }
+
+    .rightSidebar .rightTop .activity {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .rightSidebar .rightTop .activity p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #bcbcbc;
+    }
+
+    .rightSidebar .rightTop .activity button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #ff5151;
+        color: var(--white-color);
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .rightSidebar .rightTop .activity button:hover {
+        background-color: #ff0000;
+    }
+
+    .rightBottom {
+        width: 100%;
+    }
+
+    .rightBottom .announcement {
+        height: 480px;
+    }
+
+    .rightBottom .announcement .announcementHeader h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--primaryText-color);
+    }
+
+    .rightBottom .announcement .announcementLists .para {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--gray-color);
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #d1d1d1;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: var(--white-color);
+        margin-bottom: 20px;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementLeftText h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--primaryText-color);
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementLeftText p {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--gray-color);
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementRightText a {
+        padding: 5px;
+        border-radius: 50%;
+        color: var(--gray-color);
+        transition: all 0.3s ease;
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementRightText a:hover {
+        background-color: var(--lightGray-color);
+    }
+
+    .rightBottom .announcement .announcementLists .announcementList .announcementRightText a i.bxs-pin {
+        transform: rotate(45deg);
+    }
+
+    .rightBottom .announcement .seeAll {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #d1d1d1;
+    }
+
+    .rightBottom .announcement .seeAll a {
+        font-size: 16px;
+        font-weight: 500;
+        color: #ff0000;
+        transition: all 0.3s ease;
+    }
+
+    .rightBottom .announcement .seeAll a:hover {
+        text-decoration: underline;
+    }
+}
